@@ -8,6 +8,7 @@ describe('loading.vue', () => {
   beforeEach(() => {
     wrapper = shallowMount(Loading)
   })
+
   it('show func', async () => {
     expect(wrapper.vm.loadingText).toBe('')
     expect(wrapper.vm.showLoading).toBe(false)
@@ -22,13 +23,16 @@ describe('loading.vue', () => {
   })
 
   it('hide func', async () => {
-    wrapper.setData({
-      showLoading: true
-    })
+    // 手動修改data中的值
+    wrapper.vm.showLoading = true
+    // wrapper.setData({
+    //   showLoading: true
+    // })
     await wrapper.vm.$nextTick()
     expect(wrapper.vm.showLoading).toBe(true)
     expect(wrapper.isVisible()).toBe(true)
 
+    // 調用組件內的hide方法
     wrapper.vm.hide()
     await wrapper.vm.$nextTick()
     expect(wrapper.vm.showLoading).toBe(false)

@@ -12,11 +12,13 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-unused-vars': 'warn'
   },
+  // 對某些文件引入jest的配置
   overrides: [
     {
       files: [
         '**/__tests__/*.{j,t}s?(x)',
-        '**/tests/unit/**/*.spec.{j,t}s?(x)'
+        '**/tests/unit/**/*.spec.{j,t}s?(x)',
+        '**/__mocks__/*.{j,t}s?(x)'
       ],
       env: {
         jest: true
