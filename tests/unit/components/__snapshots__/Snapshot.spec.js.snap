@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot.vue match age snapshot 1`] = `
+<div>
+  <div>
+    child person
+  </div>
+  <div>
+    default msg
+  </div>
+</div>
+`;
+
+exports[`Snapshot.vue match msg snapshot 1`] = `
+<div>
+  <!--v-if-->
+  <div>
+    default msg
+  </div>
+</div>
+`;

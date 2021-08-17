@@ -1,4 +1,5 @@
-import { mutations, getters, actions } from '@/store'
+import { createStore } from 'vuex'
+import { mutations, getters, actions, storeConfig } from '@/store'
 
 describe('mutations', () => {
   it('test setToken mutations', () => {
@@ -40,4 +41,21 @@ describe('actions', () => {
     // context內部的方法被調用過setToken參數是loginResult.token
     expect(context.commit).toHaveBeenCalledWith('setToken', loginResult.token)
   })
+})
+
+test('increment updates state.count by 1', () => {
+  const store = createStore(storeConfig)
+  expect(store.state.count).toBe(0)
+
+  store.commit('increment')
+  expect(store.state.count).toBe(1)
+})
+
+test('increment updates state.count by 2', () => {
+  const store = createStore(storeConfig)
+  expect(store.state.count).toBe(0)
+
+  store.commit('increment')
+  store.commit('increment')
+  expect(store.state.count).toBe(2)
 })

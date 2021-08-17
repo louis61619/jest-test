@@ -1,8 +1,12 @@
 import { createStore } from 'vuex'
+import login from './login'
 
 export const mutations = {
   setToken(state, token) {
     state.token = token
+  },
+  increment(state) {
+    state.count++
   }
 }
 
@@ -19,12 +23,19 @@ export const actions = {
   }
 }
 
-export default createStore({
-  state: {
-    name: 'Louis'
+export const storeConfig = {
+  state: () => {
+    return {
+      name: 'Louis',
+      count: 0
+    }
   },
   mutations,
   getters,
   actions,
-  modules: {}
-})
+  modules: {
+    login
+  }
+}
+
+export default createStore(storeConfig)
