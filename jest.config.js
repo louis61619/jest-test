@@ -9,7 +9,8 @@ module.exports = {
   },
   // 指定報告生成路徑
   collectCoverage: true,
-  coverageDirectory: '<rootDir>/tests/unit/coverage'
+  coverageDirectory: '<rootDir>/tests/unit/coverage',
+  collectCoverageFrom: ['!**/node_modules/**', '!**/vendor/**']
   // 決定測試哪些
   // collectCoverageFrom: [
   //   'src/components/**/*.vue',
