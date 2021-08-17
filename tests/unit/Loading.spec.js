@@ -33,8 +33,9 @@ describe('loading.vue', () => {
     expect(wrapper.isVisible()).toBe(true)
 
     // 調用組件內的hide方法
-    wrapper.vm.hide()
-    await wrapper.vm.$nextTick()
+    // wrapper.vm.hide()
+    // await wrapper.vm.$nextTick()
+    await wrapper.vm.hide()
     expect(wrapper.vm.showLoading).toBe(false)
     expect(wrapper.isVisible()).toBe(false)
   })

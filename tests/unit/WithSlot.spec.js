@@ -12,7 +12,6 @@ describe('WithSlot.vue', () => {
         header: headerSlot
       }
     })
-    console.log(wrapper.html())
     expect(wrapper.find('.header-slot').html()).toContain(headerSlot)
   })
 })

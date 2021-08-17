@@ -1,7 +1,7 @@
 import { shallowMount } from '@vue/test-utils'
 import WithThirdParty from '@/components/WithThirdParty.vue'
 import { createStore } from 'vuex'
-// import Router from 'vue-router'
+
 // vue3中沒有createLocalVue
 // const localVue = createLocalVue()
 
